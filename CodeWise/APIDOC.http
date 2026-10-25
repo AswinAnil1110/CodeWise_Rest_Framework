@@ -1,0 +1,88 @@
+#API for QuestionList_CreateView
+###
+GET http://127.0.0.1:8000/question/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/question/
+Content-Type: application/json
+
+{
+    "title" : "Factorial number using recursion",
+    "language" : "python",
+    "difficutly_level" : "easy",
+    "score" : 5,
+    "topic" : "For loop",
+    "notes" : "This is a simple python program to find factorial of a number using recursion",
+    "sample_input" : 5,
+    "sample_output" : 120
+    
+}
+
+#API Call for Retrive Delete Update Data
+###
+GET http://127.0.0.1:8000/question/3/
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/question/6/
+Content-Type: application/json
+
+{
+    "title" : "Factorial number using recursion",
+    "language" : "java",
+    "difficutly_level" : "easy",
+    "score" : 6,
+    "topic" : "For loop",
+    "notes" : "This is a simple python program to find factorial of a number using recursion",
+    "sample_input" : 4,
+    "sample_output" : 24
+    
+}
+
+###
+DELETE http://127.0.0.1:8000/question/6/
+Content-Type: application/json
+
+
+# SUBMISSION API
+###
+GET http://127.0.0.1:8000/submission/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/submission/
+Content-Type: application/json
+
+{
+    "question_id":89,
+    "answer":"Factorial of 5 is 120",
+    "owner":"Aljin"
+}
+
+###
+GET http://127.0.0.1:8000/submission/1/
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/submission/1/
+Content-Type: application/json
+
+{
+    "question_id":3,
+    "answer":"5 is a prime number",
+    "owner":"Hari"
+}
+
+###
+DELETE http://127.0.0.1:8000/submission/2/
+Content-Type: application/json
+
+###
+PUT http://127.0.0.1:8000/submission/1/evaluate/
+Content-Type: application/json
+
+{
+    "points" : 5,
+    "remarks" : "Good Logic"
+}
